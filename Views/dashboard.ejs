@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard</title>
+</head>
+<body>
+  <h1>Dashboard</h1>
+
+  <h2>Contact Messages</h2>
+  <ul>
+    <% contacts.forEach(contact => { %>
+      <li><strong><%= contact.Name %></strong> (<%= contact.Email %>): <%= contact.Message %></li>
+    <% }) %>
+  </ul>
+
+  <h2>Car Listings</h2>
+  <ul>
+    <% listings.forEach(listing => { %>
+      <li>
+        <strong><%= listing.CarModel %></strong> - <%= listing.Year %> - $<%= listing.Price %><br/>
+        <% if (listing.ImageURL) { %>
+          <img src="<%= listing.ImageURL %>" alt="Car Image" width="200" />
+        <% } %>
+      </li>
+    <% }) %>
+  </ul>
+</body>
+</html>
